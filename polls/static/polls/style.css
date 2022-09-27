@@ -1,9 +1,9 @@
 li a {
-    color: white;
+    color: w;
 }
 body{
-    background: white url(images/Persona\ 5\ Cityscape.jpg) no-repeat;
+    background: white url(images/background.jpg) no-repeat;
 }
-div{
-    color: white
+pre{
+    color: purple;
 }

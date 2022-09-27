@@ -5,13 +5,7 @@ from django.views import generic
 from django.utils import timezone
 
 from .models import Choice, Question, DeepThought
-
-class deepThoughtView(generic.ListView):
-    template_name="polls/deepThought.html"
-    context_object_name='latest_deep_thoughts'
-    
-    def get_queryset(self):
-        return DeepThought.objects.all()
+from .forms import deepThoughtForm
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -49,6 +43,21 @@ def vote(request,question_id):
         selected_choice.save()
         return HttpResponseRedirect(reverse('polls:results',args=(question.id,)))
 
+class deepThoughtView(generic.ListView):
+    template_name="polls/deepThought.html"
+    context_object_name='latest_deep_thoughts'
+    
+    def get_queryset(self):
+        return DeepThought.objects.all()
 
+def deepthought_create_view(request):
+    form=deepThoughtForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+
+    context={
+        'form': form
+    }
+    return render(request, "polls/deepThoughtCreate.html", context)
 
 

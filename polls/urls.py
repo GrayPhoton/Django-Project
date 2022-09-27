@@ -8,6 +8,6 @@ urlpatterns = [
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     path('<int:question_id>/vote/', views.vote, name='vote'),
-    path('deepthoughts/', views.deepThoughtView.as_view(), name='DeepThought'),
+    path('deepthoughts/', views.deepthought_create_view, name='DeepThoughtCreation'),
     path('deepthoughts/list', views.deepThoughtView.as_view(), name='DeepThought'),
 ]

@@ -1,14 +1,24 @@
-{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+<style>
+    .tab{
+        tab-size: 4;
+    }
+</style>
 
+<div class="jumbotron">
+    <h1 class="display-4">Deep Thoughts</h1>
+    <p class="lead">A bulliten board of people's deepest thoughts without having to need to introdue yourself. </p>
+    <hr class="my-4">
+    <p>Feel free to take a look and post your deepest thoughts if you get a chance.</p>
+  </div>
 {% if latest_deep_thoughts %}
-    <ul>
-    {% for deepThought in latest_deep_thoughts %}
-    <li><a>{{ deepThought.title }}</a>
-        <div class="tab">{{deepThought.thoughts}}</div>
-    </li>
-    {% endfor %}
+    <ul class="list-group list-group-flush">
+        {% for deepThought in latest_deep_thoughts %}
+        <li class="list-group-item"><a>{{ deepThought.title }}</a>
+            <pre class="tab">{{deepThought.thoughts}}</pre>
+        </li>
+        {% endfor %}
     </ul>
 {% else %}
     <p>No current deep thoughts.</p>
