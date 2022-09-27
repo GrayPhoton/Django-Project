@@ -4,9 +4,14 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
-from .models import Choice, Question
+from .models import Choice, Question, DeepThought
 
-
+class deepThoughtView(generic.ListView):
+    template_name="polls/deepThought.html"
+    context_object_name='latest_deep_thoughts'
+    
+    def get_queryset(self):
+        return DeepThought.objects.all()
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -43,5 +48,7 @@ def vote(request,question_id):
         selected_choice.votes+=1
         selected_choice.save()
         return HttpResponseRedirect(reverse('polls:results',args=(question.id,)))
+
+
 
 

@@ -1,0 +1,15 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
+{% if latest_deep_thoughts %}
+    <ul>
+    {% for deepThought in latest_deep_thoughts %}
+    <li><a>{{ deepThought.title }}</a>
+        <div class="tab">{{deepThought.thoughts}}</div>
+    </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No current deep thoughts.</p>
+{% endif %}

@@ -29,3 +29,10 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+class DeepThought(models.Model):
+    title=models.CharField(max_length=50)
+    thoughts=models.TextField(default='Type your deepest thoughts...')
+
+    def __str__(self):
+        return self.title
