@@ -78,15 +78,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-import dj_database_url
-
-DATABASE_URL = os.environ.get('ON_HEROKU')
-DB_URL = None
-
-if DATABASE_URL:
-    DATABASES = {
-        dj_database_url.config(conn_max_age=600, ssl_require=True)
-    }
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
 else:
     DATABASES = {
         'default': {
