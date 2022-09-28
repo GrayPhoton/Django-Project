@@ -16,9 +16,9 @@
 {% if latest_deep_thoughts %}
     <ul class="list-group list-group-flush">
         {% for deepThought in latest_deep_thoughts %}
-        <li class="list-group-item"><a>{{ deepThought.title }}</a>
-            <pre class="tab">{{deepThought.thoughts}}</pre>
-        </li>
+            <li class="list-group-item"><a>{{ deepThought.title }}</a>
+                <pre class="tab">{{deepThought.thoughts}}</pre>
+            </li>
         {% endfor %}
     </ul>
 {% else %}
