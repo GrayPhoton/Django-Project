@@ -6,7 +6,7 @@
     }
 </style>
 
-<div class="jumbotron">
+<div class="jumbotron bg-info">
     <h1 class="display-4">Deep Thoughts</h1>
     <p class="lead">A bulliten board of people's deepest thoughts without having to need to introdue yourself. </p>
     <hr class="my-4">
@@ -16,7 +16,7 @@
 {% if latest_deep_thoughts %}
     <ul class="list-group list-group-flush">
         {% for deepThought in latest_deep_thoughts %}
-            <li class="list-group-item"><a>{{ deepThought.title }}</a>
+            <li class="list-group-item"><h4>{{ deepThought.title }}</h4>
                 <pre class="tab">{{deepThought.thoughts}}</pre>
             </li>
         {% endfor %}
@@ -24,3 +24,5 @@
 {% else %}
     <p>No current deep thoughts.</p>
 {% endif %}
+
+<div class="fixed-bottom">Created by Brandon Park</div>

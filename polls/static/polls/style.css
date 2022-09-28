@@ -1,8 +1,8 @@
 li a {
-    color: w;
+    color: white;
 }
 body{
-    background: white url(images/background.jpg) no-repeat;
+    background: black url(images/background.jpg) no-repeat;
 }
 pre{
     color: purple;
