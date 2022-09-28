@@ -1,10 +1,12 @@
-# Django is needed to run Django
-Django
-
-# gunicorn is needed by Heroku to launch the web server
-gunicorn
-
-# django-heroku is ONLY needed by Heroku for their internal process
-# if you have errors with psycopg2 or django-heroku, use the code at the bottom of settings.py to avoid the error
-# the outcome of using this bypass is that locally you will need to use either SQLite or connect to Heroku's Postgres DB
-django-heroku
+asgiref==3.5.2
+beautifulsoup4==4.11.1
+dj-database-url==1.0.0
+Django==4.1.1
+django-bootstrap-v5==1.0.11
+django-heroku==0.3.1
+gunicorn==20.1.0
+psycopg2==2.9.3
+soupsieve==2.3.2.post1
+sqlparse==0.4.3
+tzdata==2022.3
+whitenoise==6.2.0
